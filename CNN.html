@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="topnav small-device large-device">
+        <img src="data:image/png;base64,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"
+            id="logo">
+        <a href="#" class="toplink-left" title="Visit World Section">World</a>
+        <a href="#" class="toplink-left" title="Visit US Ploitics Section">US Ploitics</a>
+        <a href="#" class="toplink-left" title="Visit Business Section">Business</a>
+        <a href="#" class="toplink-left" title="Visit Health Section">Health</a>
+        <a href="#" class="toplink-left" title="Visit Entertainment Section">Entertainment</a>
+        <a href="#" class="toplink-left" title="Visit Style Section">Style</a>
+        <a href="#" class="toplink-left" title="Visit Travel Section">Travel</a>
+        <a href="#" class="toplink-left" title="Visit Sports Section">Sports</a>
+        <a href="#" class="toplink-left" title="Visit Videos Section">Videos</a>
+
+        <div class="top-right-icons">
+            <i class="fa fa-bars w3-large toplink-right"></i>
+            <i class="fa fa-search w3-large toplink-right"></i>
+            <a href="#" class="toplink-right" title="Select Edition"><b>Edition</b></a>
+        </div>
+    </div>
+
+    <div class="menu-dropdown">
+        <a href="#">World</a>
+        <a href="#">US Ploitics</a>
+        <a href="#">Business</a>
+        <a href="#">Health</a>
+        <a href="#">Entertainment</a>
+        <a href="#">Style</a>
+        <a href="#">Travel</a>
+        <a href="#">Sports</a>
+        <a href="#">Videos</a>
+    </div>
+
+    <!-- Page Body -->
+
+    <div class="page-body">
+
+        <div class="headlines">
+            <ul>
+                <li><a class="headlines-heading" href="#">CORONAVIRUS :</a></li>
+                <li><a href="#">Live updates</a></li>
+                <span class="vertical-line"></span>
+                <li><a href="#">All coronavirus stories</a></li>
+                <span class="vertical-line"></span>
+                <li><a href="#">Travel advice</a></li>
+                <span class="vertical-line"></span>
+                <li><a href="#">Tracking global spread</a></li>
+                <span class="vertical-line"></span>
+                <li><a href="#">Podcast</a></li>
+                <span class="vertical-line"></span>
+                <li><a href="#">Newsletter</a></li>
+                <span class="vertical-line"></span>
+                <li><a class="headlines-heading" href="#">TRENDING :</a></li>
+                <li><a href="#">Luxury hand sanitizer</a></li>
+            </ul>
+        </div><br>
+
+        <div class="top-view">
+            <div class="left">
+                <div class="top">
+                    <button>Live Updates</button>
+                </div>
+
+                <div class="body">
+                    <h6><b>The European Commission will introduce temporary restrictions to try to contain the spread of
+                            coronavirus</b></h6>
+                    <hr>
+                    <p>France says ibuprofen may aggravate coronavirus</p>
+                    <hr>
+                    <p>Virus-hit cruise ship has finally found a port</p>
+                    <hr>
+                    <p>Spain goes into lockdown as first lady tests positive</p>
+                    <hr>
+                    <p>This chart is critical to fighting coronavirus</p>
+                    <hr>
+                    <p>Experts: Coronavirus could hit these countries hardest</p>
+                    <hr>
+                    <p>North American ski resorts suspends all operations</p>
+                    <hr>
+                    <p>What you need to know about coronavirus today</p>
+                    <hr>
+                </div>
+
+            </div>
+
+            <div class="centre">
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Trump claims coronavirus is under control -- contradicting reality and his own top expert</b>
+                    </h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                        <li>Top health official: Life will change in US</li><br>
+                    </ul>
+                </div>
+
+                <div class="top"></div>
+
+                <div class="body">
+                    <h4><b>Global stock markets plunge after interest rate cut to zero</b></h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Winners and losers from the Biden-Sanders debate</b></h4>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                </div>
+            </div>
+        </div><br><br>
+
+        <div class="line-heading">
+            <h4><b>CORONAVIRUS</b>
+                <hr>
+            </h4>
+        </div>
+
+        <div class="second-view">
+
+            <div class="left">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                </div>
+
+                <div class="body">
+                    <h6><b>The European Commission will introduce temporary restrictions to try to contain the spread of
+                            coronavirus</b></h6>
+                    <hr>
+                    <p>France says ibuprofen may aggravate coronavirus</p>
+                    <hr>
+                    <p>Virus-hit cruise ship has finally found a port</p>
+                    <hr>
+                    <p>Spain goes into lockdown as first lady tests positive</p>
+                    <hr>
+                    <p>This chart is critical to fighting coronavirus</p>
+                    <hr>
+                    <p>Experts: Coronavirus could hit these countries hardest</p>
+                    <hr>
+                    <p>North American ski resorts suspends all operations</p>
+                    <hr>
+                    <p>What you need to know about coronavirus today</p>
+                    <hr>
+                </div>
+
+            </div>
+
+            <div class="centre">
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Trump claims coronavirus is under control -- contradicting reality and his own top expert</b>
+                    </h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                        <li>Top health official: Life will change in US</li><br>
+                    </ul>
+                </div>
+
+                <div class="top"></div>
+
+                <div class="body">
+                    <h4><b>Global stock markets plunge after interest rate cut to zero</b></h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Winners and losers from the Biden-Sanders debate</b></h4>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="second-view">
+
+            <div class="left">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                </div>
+
+                <div class="body">
+                    <h6><b>The European Commission will introduce temporary restrictions to try to contain the spread of
+                            coronavirus</b></h6>
+                    <hr>
+                    <p>France says ibuprofen may aggravate coronavirus</p>
+                    <hr>
+                    <p>Virus-hit cruise ship has finally found a port</p>
+                    <hr>
+                    <p>Spain goes into lockdown as first lady tests positive</p>
+                    <hr>
+                    <p>This chart is critical to fighting coronavirus</p>
+                    <hr>
+                    <p>Experts: Coronavirus could hit these countries hardest</p>
+                    <hr>
+                    <p>North American ski resorts suspends all operations</p>
+                    <hr>
+                    <p>What you need to know about coronavirus today</p>
+                    <hr>
+                </div>
+
+            </div>
+
+            <div class="centre">
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Trump claims coronavirus is under control -- contradicting reality and his own top expert</b>
+                    </h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                        <li>Top health official: Life will change in US</li><br>
+                    </ul>
+                </div>
+
+                <div class="top"></div>
+
+                <div class="body">
+                    <h4><b>Global stock markets plunge after interest rate cut to zero</b></h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Winners and losers from the Biden-Sanders debate</b></h4>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                </div>
+            </div>
+
+        </div><br><br>
+
+        <div class="line-heading">
+            <h4><b>FEATURED SECTION</b>
+                <hr>
+            </h4>
+        </div>
+
+        <div class="second-view">
+
+            <div class="left">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                </div>
+
+                <div class="body">
+                    <h6><b>The European Commission will introduce temporary restrictions to try to contain the spread of
+                            coronavirus</b></h6>
+                    <hr>
+                    <p>France says ibuprofen may aggravate coronavirus</p>
+                    <hr>
+                    <p>Virus-hit cruise ship has finally found a port</p>
+                    <hr>
+                    <p>Spain goes into lockdown as first lady tests positive</p>
+                    <hr>
+                    <p>This chart is critical to fighting coronavirus</p>
+                    <hr>
+                    <p>Experts: Coronavirus could hit these countries hardest</p>
+                    <hr>
+                    <p>North American ski resorts suspends all operations</p>
+                    <hr>
+                    <p>What you need to know about coronavirus today</p>
+                    <hr>
+                </div>
+
+            </div>
+
+            <div class="centre">
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Trump claims coronavirus is under control -- contradicting reality and his own top expert</b>
+                    </h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                        <li>Top health official: Life will change in US</li><br>
+                    </ul>
+                </div>
+
+                <div class="top"></div>
+
+                <div class="body">
+                    <h4><b>Global stock markets plunge after interest rate cut to zero</b></h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Winners and losers from the Biden-Sanders debate</b></h4>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="second-view">
+
+            <div class="left">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                </div>
+
+                <div class="body">
+                    <h6><b>The European Commission will introduce temporary restrictions to try to contain the spread of
+                            coronavirus</b></h6>
+                    <hr>
+                    <p>France says ibuprofen may aggravate coronavirus</p>
+                    <hr>
+                    <p>Virus-hit cruise ship has finally found a port</p>
+                    <hr>
+                    <p>Spain goes into lockdown as first lady tests positive</p>
+                    <hr>
+                    <p>This chart is critical to fighting coronavirus</p>
+                    <hr>
+                    <p>Experts: Coronavirus could hit these countries hardest</p>
+                    <hr>
+                    <p>North American ski resorts suspends all operations</p>
+                    <hr>
+                    <p>What you need to know about coronavirus today</p>
+                    <hr>
+                </div>
+
+            </div>
+
+            <div class="centre">
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Trump claims coronavirus is under control -- contradicting reality and his own top expert</b>
+                    </h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                        <li>Top health official: Life will change in US</li><br>
+                    </ul>
+                </div>
+
+                <div class="top"></div>
+
+                <div class="body">
+                    <h4><b>Global stock markets plunge after interest rate cut to zero</b></h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Winners and losers from the Biden-Sanders debate</b></h4>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                </div>
+            </div>
+
+        </div><br><br>
+
+        <div class="line-heading">
+            <h4><b>WATCH IT</b>
+                <hr>
+            </h4>
+        </div>
+
+        <div class="second-view">
+
+            <div class="left">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                </div>
+
+                <div class="body">
+                    <h6><b>The European Commission will introduce temporary restrictions to try to contain the spread of
+                            coronavirus</b></h6>
+                    <hr>
+                    <p>France says ibuprofen may aggravate coronavirus</p>
+                    <hr>
+                    <p>Virus-hit cruise ship has finally found a port</p>
+                    <hr>
+                    <p>Spain goes into lockdown as first lady tests positive</p>
+                    <hr>
+                    <p>This chart is critical to fighting coronavirus</p>
+                    <hr>
+                    <p>Experts: Coronavirus could hit these countries hardest</p>
+                    <hr>
+                    <p>North American ski resorts suspends all operations</p>
+                    <hr>
+                    <p>What you need to know about coronavirus today</p>
+                    <hr>
+                </div>
+
+            </div>
+
+            <div class="centre">
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Trump claims coronavirus is under control -- contradicting reality and his own top expert</b>
+                    </h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                        <li>Top health official: Life will change in US</li><br>
+                    </ul>
+                </div>
+
+                <div class="top"></div>
+
+                <div class="body">
+                    <h4><b>Global stock markets plunge after interest rate cut to zero</b></h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Winners and losers from the Biden-Sanders debate</b></h4>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="second-view">
+
+            <div class="left">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                </div>
+
+                <div class="body">
+                    <h6><b>The European Commission will introduce temporary restrictions to try to contain the spread of
+                            coronavirus</b></h6>
+                    <hr>
+                    <p>France says ibuprofen may aggravate coronavirus</p>
+                    <hr>
+                    <p>Virus-hit cruise ship has finally found a port</p>
+                    <hr>
+                    <p>Spain goes into lockdown as first lady tests positive</p>
+                    <hr>
+                    <p>This chart is critical to fighting coronavirus</p>
+                    <hr>
+                    <p>Experts: Coronavirus could hit these countries hardest</p>
+                    <hr>
+                    <p>North American ski resorts suspends all operations</p>
+                    <hr>
+                    <p>What you need to know about coronavirus today</p>
+                    <hr>
+                </div>
+
+            </div>
+
+            <div class="centre">
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Trump claims coronavirus is under control -- contradicting reality and his own top expert</b>
+                    </h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                        <li>Top health official: Life will change in US</li><br>
+                    </ul>
+                </div>
+
+                <div class="top"></div>
+
+                <div class="body">
+                    <h4><b>Global stock markets plunge after interest rate cut to zero</b></h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Winners and losers from the Biden-Sanders debate</b></h4>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                </div>
+            </div>
+
+        </div><br><br>
+
+        <div class="line-heading">
+            <h4><b>PHOTOS YOU SHOULD SEE</b>
+                <hr>
+            </h4>
+        </div>
+
+        <div class="second-view">
+
+            <div class="left">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                </div>
+
+                <div class="body">
+                    <h6><b>The European Commission will introduce temporary restrictions to try to contain the spread of
+                            coronavirus</b></h6>
+                    <hr>
+                    <p>France says ibuprofen may aggravate coronavirus</p>
+                    <hr>
+                    <p>Virus-hit cruise ship has finally found a port</p>
+                    <hr>
+                    <p>Spain goes into lockdown as first lady tests positive</p>
+                    <hr>
+                    <p>This chart is critical to fighting coronavirus</p>
+                    <hr>
+                    <p>Experts: Coronavirus could hit these countries hardest</p>
+                    <hr>
+                    <p>North American ski resorts suspends all operations</p>
+                    <hr>
+                    <p>What you need to know about coronavirus today</p>
+                    <hr>
+                </div>
+
+            </div>
+
+            <div class="centre">
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Trump claims coronavirus is under control -- contradicting reality and his own top expert</b>
+                    </h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                        <li>Top health official: Life will change in US</li><br>
+                    </ul>
+                </div>
+
+                <div class="top"></div>
+
+                <div class="body">
+                    <h4><b>Global stock markets plunge after interest rate cut to zero</b></h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Winners and losers from the Biden-Sanders debate</b></h4>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                </div>
+            </div>
+
+        </div><br><br>
+
+        <div class="line-heading">
+            <h4><b>PAID CONTENT</b>
+                <hr>
+            </h4>
+        </div>
+
+        <div class="second-view">
+
+            <div class="left">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                </div>
+
+                <div class="body">
+                    <h6><b>The European Commission will introduce temporary restrictions to try to contain the spread of
+                            coronavirus</b></h6>
+                    <hr>
+                    <p>France says ibuprofen may aggravate coronavirus</p>
+                    <hr>
+                    <p>Virus-hit cruise ship has finally found a port</p>
+                    <hr>
+                    <p>Spain goes into lockdown as first lady tests positive</p>
+                    <hr>
+                    <p>This chart is critical to fighting coronavirus</p>
+                    <hr>
+                    <p>Experts: Coronavirus could hit these countries hardest</p>
+                    <hr>
+                    <p>North American ski resorts suspends all operations</p>
+                    <hr>
+                    <p>What you need to know about coronavirus today</p>
+                    <hr>
+                </div>
+
+            </div>
+
+            <div class="centre">
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Trump claims coronavirus is under control -- contradicting reality and his own top expert</b>
+                    </h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                        <li>Top health official: Life will change in US</li><br>
+                    </ul>
+                </div>
+
+                <div class="top"></div>
+
+                <div class="body">
+                    <h4><b>Global stock markets plunge after interest rate cut to zero</b></h4>
+                    <hr>
+                    <ul>
+                        <li>ANALYSIS: Trump says pandemic was 'unforeseen' -- but lots of people foresaw it</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right">
+
+                <div class="section-heading"><b>More Top Stories </b></div>
+                <div class="top">
+                    <button>Analysis</button>
+                </div>
+
+                <div class="body">
+                    <h4><b>Winners and losers from the Biden-Sanders debate</b></h4>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                    <p>Moderator: Here's what swing voters are saying about Trump</p>
+                    <hr>
+                    <p>Amid coronavirus fears, Israel's Benjamin Netanyahu sees an opening</p>
+                    <hr>
+                    <p>ANALYSIS This 'evolutionarily ancient' impulse could put us all at risk</p>
+                    <hr>
+                    <p>Japanese man who killed 19 at disabled facility sentenced to death</p>
+                    <hr>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,397 @@
+        * {
+          padding: 0;
+          margin: 0px;
+        }
+
+        .page-body {
+          margin-left: 100px;
+          margin-right: 100px;
+        }
+
+        /* Large Devices*/
+        @media screen and (min-width: 900px) {
+          .menu-dropdown {
+            visibility: hidden;
+          }
+        }
+
+        /* Small Devices*/
+        @media screen and (max-width: 900px) {
+          .menu-dropdown {
+            visibility: collapse;
+          }
+
+          .topnav a,
+          .fa-search {
+            visibility: hidden;
+          }
+
+          .left,
+          .centre,
+          .right {
+            min-width: 100%;
+
+          }
+
+          .vertical-line {
+            visibility: hidden;
+          }
+
+          .topnav {
+            max-height: 50px;
+          }
+
+          .menu-dropdown:hover {
+            visibility: visible;
+          }
+
+        }
+
+
+
+        /* Add a black background color to the top navigation */
+        .topnav {
+          background-color: rgb(0, 0, 0);
+          overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .topnav a,
+        i {
+          color: #f2f2f2;
+          text-align: center;
+          padding: 12px 8px;
+          text-decoration: none;
+          font-size: 15px;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav .toplink-left {
+          float: left;
+        }
+
+        .topnav .toplink-right {
+          float: right;
+        }
+
+        .topnav #logo {
+          margin-left: 60px;
+          float: left;
+          padding: 0%;
+          width: 40x;
+          height: 40px;
+        }
+
+        .top-right-icons {
+          margin-right: 3%;
+        }
+
+        .menu-dropdown {
+          width: 100%;
+          position: absolute;
+        }
+
+        .menu-dropdown a {
+          background-color: black;
+          color: white;
+          display: block;
+          padding: 12px;
+          text-decoration: none;
+          text-align: center;
+        }
+
+        .menu-dropdown a:hover {
+          text-decoration: underline;
+        }
+
+        .headlines ul {
+          color: black;
+          list-style: none;
+          background-color: none;
+          display: inline-block;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          font-size: 14px;
+          margin-top: 10px;
+        }
+
+        .headlines-heading {
+          color: darkred;
+          font-weight: bold;
+        }
+
+        .headlines ul li {
+          float: left;
+        }
+
+        .headlines ul li a {
+          display: inline;
+          text-align: center;
+          padding: 10px 8px;
+          text-decoration: none;
+        }
+
+        .headlines ul li a:hover {
+          color: darkred;
+        }
+
+        .vertical-line {
+          border-left: 3px solid lightgray;
+          height: 18px;
+          position: absolute;
+          margin-top: 3px;
+        }
+
+        hr {
+          color: darkgray;
+        }
+
+        .top-view {
+          display: flex;
+          flex-wrap: nowrap;
+          background-color: none;
+          width: 100%;
+          height: 700px;
+          overflow: hidden;
+        }
+
+        .top-view .left {
+          width: 40%;
+          height: 100%;
+        }
+
+        .top-view .centre {
+          width: 30%;
+          height: 100%;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        .top-view .right {
+          width: 30%;
+          height: 100%;
+        }
+
+        .top-view .left .top {
+          width: 100%;
+          height: 35%;
+          background-image: url(https://www.rcn.org.uk/magazines/-/media/royal-college-of-nursing/images/rcn-magazines/images/bulletin/2020/mar/corona-virus.jpg?la=en);
+          background-repeat: no-repeat;
+          background-position: cover;
+          background-size: 100%;
+        }
+
+        .top-view .left .top button {
+          background-color: red;
+          border: none;
+          color: white;
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          margin: 214px 0px;
+        }
+
+        .top-view .left .body {
+          line-height: 120%;
+        }
+
+        .top-view .centre .top {
+          width: 100%;
+          height: 25%;
+          background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQuS4PwgB6ZDyqssTFf_QmvQbW2N_RajlW6oEv9fP2MnNIIt5aO);
+          background-repeat: no-repeat;
+          background-position: cover;
+          background-size: 100%;
+        }
+
+        .top-view .centre .top button {
+          background-color: red;
+          border: none;
+          color: white;
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          margin: 144px 0px;
+        }
+
+        .top-view .centre .body {
+          line-height: 120%;
+        }
+
+        .top-view .centre .body ul li {
+          margin-left: 30px;
+        }
+
+        .body p,
+        li {
+          color: black;
+          font-size: 13px;
+        }
+
+        .body b:hover {
+          color: darkred;
+        }
+
+        .body p:hover {
+          color: darkred;
+        }
+
+        .body ul li:hover {
+          color: darkred;
+        }
+
+        .top-view .right .top {
+          width: 100%;
+          height: 25%;
+          background-image: url(https://images.unsplash.com/photo-1490077476659-095159692ab5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+          background-repeat: no-repeat;
+          background-position: cover;
+          background-size: 100%;
+        }
+
+        .top-view .right .top button {
+          background-color: red;
+          border: none;
+          color: white;
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          margin: 144px 0px;
+        }
+
+        .top-view .right .body {
+          line-height: 120%;
+        }
+
+        .section-heading {
+          background-color: lightgray;
+          height: 30px;
+          padding: 5px;
+        }
+
+        .section-heading b {
+          color: black;
+        }
+
+        .second-view {
+          display: flex;
+          flex-wrap: nowrap;
+          background-color: none;
+          width: 100%;
+          height: 700px;
+          overflow: hidden;
+        }
+
+        .second-view .left {
+          width: 33%;
+          height: 100%;
+        }
+
+        .second-view .centre {
+          width: 33%;
+          height: 100%;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        .second-view .right {
+          width: 33%;
+          height: 100%;
+        }
+
+        .second-view .left .top {
+          width: 100%;
+          height: 35%;
+          background-image: url(https://www.rcn.org.uk/magazines/-/media/royal-college-of-nursing/images/rcn-magazines/images/bulletin/2020/mar/corona-virus.jpg?la=en);
+          background-repeat: no-repeat;
+          background-position: cover;
+          background-size: 100%;
+        }
+
+        .second-view .left .top button {
+          background-color: red;
+          border: none;
+          color: white;
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          margin: 214px 0px;
+        }
+
+        .second-view .left .body {
+          line-height: 120%;
+        }
+
+        .second-view .centre .top {
+          width: 100%;
+          height: 25%;
+          background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQuS4PwgB6ZDyqssTFf_QmvQbW2N_RajlW6oEv9fP2MnNIIt5aO);
+          background-repeat: no-repeat;
+          background-position: cover;
+          background-size: 100%;
+        }
+
+        .second-view .centre .top button {
+          background-color: red;
+          border: none;
+          color: white;
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          margin: 144px 0px;
+        }
+
+        .second-view .centre .body {
+          line-height: 120%;
+        }
+
+        .second-view .centre .body ul li {
+          margin-left: 30px;
+        }
+
+        .second-view .right .top {
+          width: 100%;
+          height: 25%;
+          background-image: url(https://images.unsplash.com/photo-1490077476659-095159692ab5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+          background-repeat: no-repeat;
+          background-position: cover;
+          background-size: 100%;
+        }
+
+        .second-view .right .top button {
+          background-color: red;
+          border: none;
+          color: white;
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          margin: 144px 0px;
+        }
+
+        .second-view .right .body {
+          line-height: 120%;
+        }
+
+        .line-heading {
+          width: 100%;
+          float: left;
+        }
+
+        .line-heading hr {
+          border-top: 1px solid darkgrey;
+          border-bottom: 1px solid darkgrey;
+          height: 8px;
+        }
